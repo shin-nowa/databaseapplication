@@ -1,0 +1,16 @@
+"id_venda","numero_venda","id_cliente","id_loja","id_funcionario","data_venda","valor_total","desconto_total","forma_pagamento","status_venda"
+1,VD202401001,1,1,2,"2024-01-15 10:30:00",3698.90,0.00,Cartão Crédito,Finalizada
+2,VD202401002,2,1,3,"2024-01-15 14:45:00",449.80,44.98,PIX,Finalizada
+3,VD202401003,3,2,6,"2024-01-16 11:00:00",2199.00,0.00,Cartão Débito,Finalizada
+4,VD202401004,4,3,10,"2024-01-17 15:30:00",279.80,27.98,Dinheiro,Finalizada
+5,VD202401005,5,4,14,"2024-01-18 09:15:00",519.70,0.00,Cartão Crédito,Finalizada
+6,VD202401006,6,5,18,"2024-01-19 16:00:00",89.90,0.00,PIX,Finalizada
+7,VD202401007,7,6,2,"2024-01-20 10:45:00",1499.00,149.90,Cartão Crédito,Finalizada
+8,VD202401008,8,7,3,"2024-01-21 13:20:00",349.70,0.00,Cartão Débito,Finalizada
+9,VD202401009,9,8,4,"2024-01-22 11:30:00",169.80,16.98,PIX,Finalizada
+10,VD202401010,10,1,5,"2024-01-23 14:00:00",787.50,0.00,Cartão Crédito,Finalizada
+11,VD202402001,11,2,6,"2024-02-01 09:30:00",4298.80,429.88,Cartão Crédito,Finalizada
+12,VD202402002,12,3,7,"2024-02-02 15:45:00",199.90,0.00,PIX,Finalizada
+13,VD202402003,13,4,8,"2024-02-03 10:15:00",659.60,65.96,Cartão Débito,Finalizada
+14,VD202402004,14,5,9,"2024-02-04 14:30:00",89.90,0.00,Dinheiro,Finalizada
+15,VD202402005,15,6,10,"2024-02-05 11:00:00",349.80,34.98,PIX,Finalizada

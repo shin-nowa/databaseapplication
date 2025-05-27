@@ -1,0 +1,238 @@
+-- ===============================================
+-- CRIAÇÃO DA BASE DE DADOS DE VAREJO (ESTRUTURA BÁSICA)
+-- ===============================================
+
+-- Criação do banco de dados
+CREATE DATABASE IF NOT EXISTS VarejoBase;
+USE VarejoBase;
+
+-- ===============================================
+-- TABELAS OPERACIONAIS BÁSICAS
+-- ===============================================
+
+-- Tabela de Categorias
+CREATE TABLE IF NOT EXISTS categoria (
+    id_categoria INT PRIMARY KEY AUTO_INCREMENT,
+    nome_categoria VARCHAR(50) NOT NULL,
+    descricao TEXT
+);
+
+-- Tabela de Produtos
+CREATE TABLE IF NOT EXISTS produto (
+    id_produto INT PRIMARY KEY AUTO_INCREMENT,
+    codigo_produto VARCHAR(20) UNIQUE NOT NULL,
+    nome_produto VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    id_categoria INT,
+    marca VARCHAR(50),
+    preco_atual DECIMAL(10,2),
+    unidade_medida VARCHAR(20),
+    ativo BOOLEAN DEFAULT TRUE,
+    FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
+);
+
+-- Tabela de Clientes
+CREATE TABLE IF NOT EXISTS cliente (
+    id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    cpf VARCHAR(11) UNIQUE NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100),
+    telefone VARCHAR(20),
+    endereco VARCHAR(200),
+    cidade VARCHAR(50),
+    estado CHAR(2),
+    cep VARCHAR(8),
+    ativo BOOLEAN DEFAULT TRUE
+);
+
+-- Tabela de Lojas
+CREATE TABLE IF NOT EXISTS loja (
+    id_loja INT PRIMARY KEY AUTO_INCREMENT,
+    codigo_loja VARCHAR(10) UNIQUE NOT NULL,
+    nome_loja VARCHAR(50) NOT NULL,
+    endereco VARCHAR(200),
+    cidade VARCHAR(50),
+    estado CHAR(2),
+    cep VARCHAR(8),
+    telefone VARCHAR(20),
+    gerente VARCHAR(100),
+    ativa BOOLEAN DEFAULT TRUE
+);
+
+-- Tabela de Funcionários
+CREATE TABLE IF NOT EXISTS funcionario (
+    id_funcionario INT PRIMARY KEY AUTO_INCREMENT,
+    codigo_funcionario VARCHAR(10) UNIQUE NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    cargo VARCHAR(50),
+    id_loja INT,
+    salario DECIMAL(10,2),
+    ativo BOOLEAN DEFAULT TRUE,
+    FOREIGN KEY (id_loja) REFERENCES loja(id_loja)
+);
+
+-- Tabela de Vendas
+CREATE TABLE IF NOT EXISTS venda (
+    id_venda INT PRIMARY KEY AUTO_INCREMENT,
+    numero_venda VARCHAR(20) UNIQUE NOT NULL,
+    id_cliente INT,
+    id_loja INT,
+    id_funcionario INT,
+    data_venda DATETIME,
+    valor_total DECIMAL(10,2),
+    desconto_total DECIMAL(10,2),
+    forma_pagamento VARCHAR(30),
+    status_venda VARCHAR(20),
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente),
+    FOREIGN KEY (id_loja) REFERENCES loja(id_loja),
+    FOREIGN KEY (id_funcionario) REFERENCES funcionario(id_funcionario)
+);
+
+-- Tabela de Itens da Venda
+CREATE TABLE IF NOT EXISTS item_venda (
+    id_item INT PRIMARY KEY AUTO_INCREMENT,
+    id_venda INT,
+    id_produto INT,
+    quantidade INT,
+    preco_unitario DECIMAL(10,2),
+    desconto DECIMAL(10,2),
+    valor_total DECIMAL(10,2),
+    FOREIGN KEY (id_venda) REFERENCES venda(id_venda),
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto)
+);
+
+-- Tabela de Fornecedores
+CREATE TABLE IF NOT EXISTS fornecedor (
+    id_fornecedor INT PRIMARY KEY AUTO_INCREMENT,
+    cnpj VARCHAR(14) UNIQUE NOT NULL,
+    razao_social VARCHAR(100) NOT NULL,
+    nome_fantasia VARCHAR(100),
+    telefone VARCHAR(20),
+    email VARCHAR(100),
+    endereco VARCHAR(200),
+    cidade VARCHAR(50),
+    estado CHAR(2),
+    ativo BOOLEAN DEFAULT TRUE
+);
+
+-- Tabela de Produtos x Fornecedores
+CREATE TABLE IF NOT EXISTS produto_fornecedor (
+    id_produto INT,
+    id_fornecedor INT,
+    preco_compra DECIMAL(10,2),
+    prazo_entrega INT,
+    PRIMARY KEY (id_produto, id_fornecedor),
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto),
+    FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id_fornecedor)
+);
+
+-- Tabela de Estoque
+CREATE TABLE IF NOT EXISTS estoque (
+    id_estoque INT PRIMARY KEY AUTO_INCREMENT,
+    id_produto INT,
+    id_loja INT,
+    quantidade_atual INT,
+    quantidade_minima INT,
+    quantidade_maxima INT,
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto),
+    FOREIGN KEY (id_loja) REFERENCES loja(id_loja),
+    UNIQUE KEY uk_produto_loja (id_produto, id_loja)
+);
+
+-- Tabela de Compras
+CREATE TABLE IF NOT EXISTS compra (
+    id_compra INT PRIMARY KEY AUTO_INCREMENT,
+    numero_compra VARCHAR(20) UNIQUE NOT NULL,
+    id_fornecedor INT,
+    id_loja INT,
+    data_compra DATETIME,
+    valor_total DECIMAL(10,2),
+    status_compra VARCHAR(20),
+    FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id_fornecedor),
+    FOREIGN KEY (id_loja) REFERENCES loja(id_loja)
+);
+
+-- Tabela de Itens da Compra
+CREATE TABLE IF NOT EXISTS item_compra (
+    id_item INT PRIMARY KEY AUTO_INCREMENT,
+    id_compra INT,
+    id_produto INT,
+    quantidade INT,
+    preco_unitario DECIMAL(10,2),
+    valor_total DECIMAL(10,2),
+    FOREIGN KEY (id_compra) REFERENCES compra(id_compra),
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto)
+);
+
+-- Tabela de Avaliações
+CREATE TABLE IF NOT EXISTS avaliacao (
+    id_avaliacao INT PRIMARY KEY AUTO_INCREMENT,
+    id_produto INT,
+    id_cliente INT,
+    data_avaliacao DATETIME,
+    nota INT CHECK (nota >= 1 AND nota <= 5),
+    comentario TEXT,
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto),
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
+);
+
+-- Tabela de Promoções
+CREATE TABLE IF NOT EXISTS promocao (
+    id_promocao INT PRIMARY KEY AUTO_INCREMENT,
+    nome_promocao VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    data_inicio DATE,
+    data_fim DATE,
+    percentual_desconto DECIMAL(5,2),
+    ativa BOOLEAN DEFAULT TRUE
+);
+
+-- Tabela de Produtos em Promoção
+CREATE TABLE IF NOT EXISTS produto_promocao (
+    id_promocao INT,
+    id_produto INT,
+    preco_promocional DECIMAL(10,2),
+    PRIMARY KEY (id_promocao, id_produto),
+    FOREIGN KEY (id_promocao) REFERENCES promocao(id_promocao),
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto)
+);
+-- TABELA HISTORICO ESTOQUE --
+CREATE TABLE historico_estoque (
+  id_historico INT AUTO_INCREMENT PRIMARY KEY,
+  id_produto INT NOT NULL,
+  id_loja INT NOT NULL,
+  quantidade INT NOT NULL,
+  data_registro DATETIME NOT NULL
+);
+
+-- TABELA HISTORICO PRECO --
+CREATE TABLE historico_preco (
+  id_historico INT AUTO_INCREMENT PRIMARY KEY,
+  id_produto INT NOT NULL,
+  preco DECIMAL(10,2) NOT NULL,
+  data_inicio DATE NOT NULL,
+  data_fim DATE
+);
+
+-- ===============================================
+-- ÍNDICES BÁSICOS
+-- ===============================================
+
+CREATE INDEX idx_venda_data ON venda(data_venda);
+CREATE INDEX idx_venda_cliente ON venda(id_cliente);
+CREATE INDEX idx_produto_categoria ON produto(id_categoria);
+CREATE INDEX idx_avaliacao_produto ON avaliacao(id_produto);
+CREATE INDEX idx_estoque_produto ON estoque(id_produto);
+
+-- ===============================================
+-- INFORMAÇÕES SOBRE A BASE
+-- ===============================================
+
+-- Query para verificar todas as tabelas criadas
+SELECT 
+    table_name AS 'Tabela',
+    table_rows AS 'Linhas (estimado)',
+    ROUND(data_length/1024/1024, 2) AS 'Tamanho (MB)'
+FROM information_schema.tables
+WHERE table_schema = 'VarejoBase'
+ORDER BY table_name;

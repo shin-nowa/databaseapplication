@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📦 <%= title %></h1>
+    <p><%= subtitle %></p>
+
+    <div class="buttons">
+      <% links.forEach(link => { %>
+        <button class="botao"><a href="<%= link.url %>" class="btn"><%= link.name %></a></button>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

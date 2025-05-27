@@ -1,0 +1,26 @@
+[
+{
+  "id_produto": 1,
+  "cpf_cliente": "12345678900",
+  "nome_cliente": "Carlos",
+  "comentario": "Celular bom!",
+  "nota": 5,
+  "data_comentario": { "$date": "2025-05-18T00:00:00Z" }
+},
+{
+    "id_produto": 12,
+    "cpf_cliente": "99999999999",
+    "nome_cliente": "Luana",
+    "comentario": "Muito bom",
+    "nota": 5,
+    "data_comentario": { "$date": "2025-05-19T00:00:00Z" }
+},
+{
+  "id_produto": 3,
+  "cpf_cliente": "1232323132",
+  "nome_cliente": "Carlos",
+  "comentario": "Horrível",
+  "nota": 1,
+  "data_comentario": { "$date": "2025-05-15T00:00:00Z"}
+}
+]

@@ -1,0 +1,41 @@
+"id_produto","codigo_produto","nome_produto","descricao","id_categoria","marca","preco_atual","unidade_medida","ativo"
+1,ELET001,Smartphone Galaxy S22,Smartphone Samsung Galaxy S22 128GB,1,Samsung,3499.00,UN,1
+2,ELET002,Notebook Dell Inspiron 15,Notebook Dell i5 8GB RAM 512GB SSD,1,Dell,2899.00,UN,1
+3,ELET003,"TV Smart 50"" 4K",Smart TV LG 50 polegadas 4K,1,LG,2199.00,UN,1
+4,ELET004,Fone Bluetooth,Fone de ouvido bluetooth JBL,1,JBL,249.90,UN,1
+5,ELET005,Mouse Gamer,Mouse gamer RGB Logitech,1,Logitech,199.90,UN,1
+6,ALIM001,Café Premium 500g,Café torrado e moído premium,2,Melitta,24.90,PCT,1
+7,ALIM002,Chocolate ao Leite 200g,Chocolate ao leite Nestlé,2,Nestlé,8.90,UN,1
+8,ALIM003,"Água Mineral 1,5L",Água mineral sem gás,2,Crystal,2.90,UN,1
+9,ALIM004,Biscoito Integral,Biscoito integral multigrãos,2,Vitarella,4.50,PCT,1
+10,ALIM005,Suco Natural 1L,Suco de laranja natural,2,Del Valle,7.90,UN,1
+11,VEST001,Camisa Polo Masculina,Camisa polo algodão masculina,3,Lacoste,189.90,UN,1
+12,VEST002,Calça Jeans Feminina,Calça jeans feminina skinny,3,Levi's,259.90,UN,1
+13,VEST003,Tênis Running,Tênis para corrida unissex,3,Nike,399.90,PAR,1
+14,VEST004,Vestido Casual,Vestido casual feminino,3,Renner,119.90,UN,1
+15,VEST005,Mochila Escolar,Mochila escolar resistente,3,Samsonite,149.90,UN,1
+16,CASA001,Jogo de Panelas 5 peças,Jogo de panelas antiaderente,4,Tramontina,299.90,JG,1
+17,CASA002,Edredom Casal,Edredom casal 100% algodão,4,Santista,189.90,UN,1
+18,CASA003,Conjunto de Toalhas,Kit 4 toalhas de banho,4,Karsten,99.90,KIT,1
+19,CASA004,Luminária de Mesa,Luminária LED para mesa,4,Philips,89.90,UN,1
+20,CASA005,Organizador Multiuso,Organizador plástico com divisórias,4,Ordene,39.90,UN,1
+21,ESPO001,Bola de Futebol,Bola de futebol oficial,5,Adidas,129.90,UN,1
+22,ESPO002,Kit Halteres 10kg,Par de halteres ajustáveis,5,Kikos,199.90,KIT,1
+23,ESPO003,Tapete Yoga,Tapete para yoga antiderrapante,5,Acte Sports,79.90,UN,1
+24,ESPO004,Bicicleta Aro 29,Mountain bike aro 29,5,Caloi,1499.00,UN,1
+25,ESPO005,Corda de Pular,Corda de pular profissional,5,Speedo,39.90,UN,1
+26,BELZ001,Shampoo 400ml,Shampoo hidratante,6,Pantene,18.90,UN,1
+27,BELZ002,Creme Hidratante 200ml,Creme hidratante corporal,6,Nivea,24.90,UN,1
+28,BELZ003,Perfume Masculino 100ml,Perfume masculino amadeirado,6,Boticário,189.90,UN,1
+29,BELZ004,Base Líquida,Base líquida cobertura média,6,MAC,249.90,UN,1
+30,BELZ005,Kit Maquiagem,Kit maquiagem completo,6,Ruby Rose,89.90,KIT,1
+31,LIVR001,Livro Best Seller,Romance contemporâneo,7,Intrínseca,49.90,UN,1
+32,LIVR002,Caderno Universitário,Caderno 200 folhas,7,Tilibra,24.90,UN,1
+33,LIVR003,Kit Canetas Coloridas,Kit 12 canetas coloridas,7,BIC,19.90,KIT,1
+34,LIVR004,Agenda 2024,Agenda executiva 2024,7,Foroni,34.90,UN,1
+35,LIVR005,Calculadora Científica,Calculadora científica completa,7,Casio,89.90,UN,1
+36,BRIN001,Lego Classic 500 peças,Kit Lego construção classic,8,Lego,299.90,CX,1
+37,BRIN002,Boneca Fashion,Boneca fashion com acessórios,8,Mattel,149.90,UN,1
+38,BRIN003,Quebra-cabeça 1000 peças,Quebra-cabeça paisagem,8,Grow,59.90,CX,1
+39,BRIN004,Carrinho Hot Wheels,Carrinho colecionável,8,Hot Wheels,12.90,UN,1
+40,BRIN005,Jogo de Tabuleiro,Jogo War clássico,8,Grow,89.90,CX,1

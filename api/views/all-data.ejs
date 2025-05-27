@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dados do Banco - <%= title %></title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📦 <%= title %> - Dados do Banco</h1>
+
+    <% Object.keys(data).forEach(table => { %>
+      <div class="table-card">
+        <div class="table-header" onclick="toggleTable('<%= table %>')">
+          ▶ <%= table %> (<%= data[table].length %> registros)
+        </div>
+        <div class="table-body" id="table-<%= table %>" style="display: none;">
+          <table>
+            <thead>
+              <tr>
+                <% if (data[table].length > 0) { %>
+                  <% Object.keys(data[table][0]).forEach(col => { %>
+                    <th><%= col %></th>
+                  <% }) %>
+                <% } %>
+              </tr>
+            </thead>
+            <tbody>
+              <% data[table].forEach(row => { %>
+                <tr>
+                  <% Object.values(row).forEach(val => { %>
+                    <td><%= val %></td>
+                  <% }) %>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+"id_loja","codigo_loja","nome_loja","endereco","cidade","estado","cep","telefone","gerente","ativa"
+1,LJ001,Loja Shopping Center,"Av. Paulista, 1500",São Paulo,SP,"01310100","11-3456-7890",Carlos Silva,1
+2,LJ002,Loja Barra Shopping,"Av. das Américas, 4666",Rio de Janeiro,RJ,"22640102","21-2431-8900",Ana Santos,1
+3,LJ003,Loja BH Shopping,"Rod. BR-356, 3049",Belo Horizonte,MG,"31150900","31-3456-7890",Pedro Oliveira,1
+4,LJ004,Loja Recife Shopping,"Av. Agamenon Magalhães, 1000",Recife,PE,"52070000","81-3456-7890",Maria Costa,1
+5,LJ005,Loja Salvador Shopping,"Av. Tancredo Neves, 2915",Salvador,BA,"41820021","71-3456-7890",João Pereira,1
+6,LJ006,Loja Porto Alegre,"Av. Diário de Notícias, 300",Porto Alegre,RS,"90810000","51-3456-7890",Paula Lima,1
+7,LJ007,Loja Brasília Shopping,SCN Q 6 L 2,Brasília,DF,"70716900","61-3456-7890",Roberto Alves,1
+8,LJ008,Loja Curitiba Shopping,"Av. das Torres, 1700",Curitiba,PR,"82840730","41-3456-7890",Juliana Martins,1

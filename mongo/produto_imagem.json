@@ -1,0 +1,22 @@
+[{
+  "id_produto": 1,
+  "titulo": "Imagem frontal",
+  "url": "https://api.store.vivo.com.br/medias/TGSA43162000-5-515Wx515H?context=bWFzdGVyfGF6dXJlaW1hZ2VzfDEyNDQyMHxpbWFnZS9qcGVnfGFEUTRMMmd4TWk4NE9UZzBOalF4T0RNd09UUXlMMVJIVTBFME16RTJNakF3TUY4b05TbGZOVEUxVjNnMU1UVkl8MWJkZjVhMGY4NzgyNmIwZjlkYTI4YWNhZTU2ZGI1YTY5YmM5NzY1MmYyZWE3YWI5MDFiN2JmNmNlYWM0Y2UwOQ",
+  "tipo": "principal",
+  "data_upload": { "$date": "2025-05-18T00:00:00Z" }
+},
+{
+  "id_produto": 12,
+  "titulo": "Imagem Frontal",
+  "url": "https://cdn-images.farfetch-contents.com/28/45/06/74/28450674_57778969_2048.jpg",
+  "tipo": "principal",
+  "data_upload": { "$date": "2025-05-19T00:00:00Z" }
+},
+{
+  "id_produto": 3,
+  "titulo": "Imagem Frontal",
+  "url": "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/058/797/371/original/807221_01.jpg.jpeg?action=crop&width=750",
+  "tipo": "principal",
+  "data_upload": { "$date": "2025-05-19T00:00:00Z" }
+}
+]
